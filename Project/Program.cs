@@ -32,3 +32,25 @@ void PrintArrOfStrings(string[] array) // вывод массива строк �
     }
     Console.Write("]");
 }
+
+int ThreeSymbStrings(string[] array) //подсчет сколько элементов имеет <= 3 символов
+{
+    int count = 0;
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i].Length <= 3) 
+        count++;
+    }
+    return count;
+}
+string[] ThreeSimbolsArr(string[] arr) //создание массива из элементов меньше трех
+{
+    string text = " ";
+    for (int i = 0; i < arr.Length; i++)
+    {
+        if(arr[i].Length <= 3) 
+        arr[i] = arr[i];
+        else arr[i] = text;
+    }
+    return arr;
+}
