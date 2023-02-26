@@ -18,7 +18,7 @@ string InsertString(string text) //метод ввода строки польз
 string[] StringToArrayOfStrings(string userArray) //перевод строки в массив строк
 {
     string str = userArray;
-    string[] arrOfStrings = str.Split(",");
+    string[] arrOfStrings = str.Split("");
     return arrOfStrings;
 }
 
@@ -61,7 +61,7 @@ string[] ResultArray(int size, string[] array) //создание нового �
     string text = "null";
     for (int i = 0; i < array.Length; i++)
     {
-        if(array[i] = text)
+        if(array[i] == text)
         {
             i ++;
         }
@@ -70,13 +70,15 @@ string[] ResultArray(int size, string[] array) //создание нового �
     return newArr;
 }
 
-string userString = InsertString("Введите строки через запятую: "); //ввод массива пользователем
+string userString = InsertString("Введите массив через пробел: "); //ввод массива пользователем
 Console.WriteLine();
 
 string[] arrOfStrings = StringToArrayOfStrings(userString);//перевод строки в массив строк
 PrintArrOfStrings(arrOfStrings);
+Console.WriteLine();
 
 int sizeResultArr = ThreeSymbStrings(arrOfStrings); // сколько элементов c символами <= 3
 string[] resultArray = ThreeSimbolsArr(arrOfStrings); 
-string[] newArray = ResultArray(sizeResultArr, arrOfStrings);
+PrintArrOfStrings(resultArray);
+string[] newArray = ResultArray(sizeResultArr, resultArray);
 PrintArrOfStrings(newArray);
