@@ -45,7 +45,7 @@ int ThreeSymbStrings(string[] array) //подсчет сколько элеме�
 }
 string[] ThreeSimbolsArr(string[] arr) //создание массива из элементов меньше трех
 {
-    string text = " ";
+    string text = "null";
     for (int i = 0; i < arr.Length; i++)
     {
         if(arr[i].Length <= 3) 
@@ -54,3 +54,29 @@ string[] ThreeSimbolsArr(string[] arr) //создание массива из э
     }
     return arr;
 }
+
+string[] ResultArray(int size, string[] array) //создание нового массива с длиной = count 
+{
+    string[] newArr = new string[size];
+    string text = "null";
+    for (int i = 0; i < array.Length; i++)
+    {
+        if(array[i] = text)
+        {
+            i ++;
+        }
+        else newArr[i] = array[i];
+    }
+    return newArr;
+}
+
+string userString = InsertString("Введите строки через запятую: "); //ввод массива пользователем
+Console.WriteLine();
+
+string[] arrOfStrings = StringToArrayOfStrings(userString);//перевод строки в массив строк
+PrintArrOfStrings(arrOfStrings);
+
+int sizeResultArr = ThreeSymbStrings(arrOfStrings); // сколько элементов c символами <= 3
+string[] resultArray = ThreeSimbolsArr(arrOfStrings); 
+string[] newArray = ResultArray(sizeResultArr, arrOfStrings);
+PrintArrOfStrings(newArray);
