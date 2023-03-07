@@ -61,11 +61,11 @@ string[] ResultArray(int size, string[] array) //создание нового �
     string text = "null";
     for (int i = 0; i < array.Length; i++)
     {
-        if(array[i] == text)
+        if(array[i] != text)
         {
-            i ++;
+            newArr[i] = array[i];
         }
-        else newArr[i] = array[i];
+        else i ++;
     }
     return newArr;
 }
